@@ -1,0 +1,10 @@
+.profile__add {
+    width: 16px;
+    height: 16px;
+}
+@media (min-width: 820px ) {
+    .profile__add {
+        width: 22px;
+        height: 22px;
+    }
+}

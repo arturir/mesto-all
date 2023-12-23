@@ -1,0 +1,8 @@
+.header__menu {
+    margin-right: 27px;
+}
+@media (min-width: 1280px) {
+    .header__menu {
+        margin-right: 0;
+    } 
+}

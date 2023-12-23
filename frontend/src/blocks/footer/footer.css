@@ -1,0 +1,13 @@
+.footer {
+    margin: 0 19px 36px;
+}
+@media (min-width: 820px ) {
+    .footer {
+        margin: 0 100px 60px;
+    }
+}
+@media (min-width: 1280px ) {
+    .footer {
+        margin: 0 200px 60px;
+    }
+}

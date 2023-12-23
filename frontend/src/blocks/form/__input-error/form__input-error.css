@@ -1,0 +1,18 @@
+.form__input-error {
+    visibility: hidden;
+    display: block;
+    min-height: 30px;
+    width: 238px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: left;
+    color: rgba(255, 0, 0, 1);
+    
+}
+@media (min-width: 1280px) {
+    .form__input-error {
+        width: 358px;
+        margin: 5px 0 0;
+    }
+}

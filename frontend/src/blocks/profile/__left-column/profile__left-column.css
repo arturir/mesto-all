@@ -1,0 +1,12 @@
+.profile__left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+}
+@media (min-width: 820px) {
+    .profile__left-column {
+        flex-direction: row;
+        gap: 30px;
+    }
+}

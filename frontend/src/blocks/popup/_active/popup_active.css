@@ -1,0 +1,9 @@
+.popup_active {
+    visibility: visible;
+    transition: visibility 0s, opacity 0.4s;
+    opacity: 1;
+    
+}
+.popup_active:hover ~ body {
+    overflow-y: hidden;
+}

@@ -1,0 +1,20 @@
+.profile__metier {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    margin: 0;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 250px;
+}
+@media (min-width: 820px) {
+    .profile__metier {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22px;
+        text-align: left;
+        max-width: 400px;
+    }
+}

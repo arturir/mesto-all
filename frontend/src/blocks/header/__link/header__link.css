@@ -1,0 +1,9 @@
+.header__link {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(169, 169, 169, 1);
+    text-decoration: none;
+}
+.header__link:hover {
+    color: rgba(169, 169, 169, 0.7);
+}

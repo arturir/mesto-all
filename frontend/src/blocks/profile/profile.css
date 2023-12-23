@@ -1,0 +1,19 @@
+.profile {
+    margin: 0 19px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@media (min-width: 820px) {
+    .profile {
+        margin: 0 100px 50px;
+        flex-direction: row;
+    }
+}
+@media (min-width: 1280px) {
+    .profile {
+        margin: 0 200px 50px;
+        max-width: 880px;
+    }
+}

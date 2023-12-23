@@ -1,0 +1,17 @@
+.form__submit {
+    width: 238px;
+    height: 50px;
+    border-radius: 2px;
+    color: #ffffff;
+    background-color: #000000;
+    border: 0;
+}
+.form__submit:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+@media (min-width: 1280px) {
+    .form__submit {
+        width: 358px;
+    }
+}

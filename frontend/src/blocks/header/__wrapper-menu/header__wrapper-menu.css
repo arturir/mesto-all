@@ -1,0 +1,6 @@
+.header__wrapper-meun {
+    display: flex;
+    justify-content: right;
+    gap: 24px;
+    align-items: center;
+}

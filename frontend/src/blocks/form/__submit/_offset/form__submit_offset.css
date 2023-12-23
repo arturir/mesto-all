@@ -1,0 +1,8 @@
+.form__submit_offset {
+    margin-top: 176px;
+}
+@media (min-width: 1280px) {
+    .form__submit_offset {
+        margin-top: 216px;
+    }
+}
