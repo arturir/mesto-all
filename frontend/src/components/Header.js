@@ -18,8 +18,8 @@ export default function Header ({exitAccount,  login}) {
                     {loggedIn && <p className="header__email">{login}</p> }
                     {loggedIn && <NavLink to="/" className="header__link" onClick={exitAccount}>Выйти</NavLink> }
                 </div>
-                { usePathname("/sign-in") && <NavLink to="/sign-up" className="header__link">Регистрация</NavLink> }
-                { usePathname("/sign-up") && <NavLink to="/sign-in" className="header__link">Войти</NavLink> }
+                { usePathname("/signin") && <NavLink to="/signup" className="header__link">Регистрация</NavLink> }
+                { usePathname("/signup") && <NavLink to="/signin" className="header__link">Войти</NavLink> }
             </nav>
         </header>
     )

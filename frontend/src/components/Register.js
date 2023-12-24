@@ -23,7 +23,7 @@ export default function Login ({handleInfoTooltip}) {
         register(password, email)
         .then(res => {
             handleInfoTooltip('ok', 'Вы успешно зарегистрировались!')
-            navigate('/login', {replace: true});
+            navigate('/signin', {replace: true});
           }
         )
         .catch(err => errorRegLogHandle(err))
@@ -39,7 +39,7 @@ export default function Login ({handleInfoTooltip}) {
                     <span className="form__input-error login-form-password-error"></span>
                     <button type="submit" className="form__submit form__submit_theme_black form__submit_offset">Зарегестрироваться</button>
                     <div className="form__bottom-wrapper">
-                        <p className="form__bottom-text">Уже зарегестрированны?</p>{<NavLink to="/sign-in"  className="form__bottom-link">Войти</NavLink> }
+                        <p className="form__bottom-text">Уже зарегестрированны?</p>{<NavLink to="/signin"  className="form__bottom-link">Войти</NavLink> }
                     </div>
                 </form>
             </main>

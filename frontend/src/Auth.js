@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://api.gosu.nomoredomainsmonster.ru';
 
 const getResponseData = (response) => {
     if (response.ok) {

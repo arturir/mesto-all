@@ -167,9 +167,9 @@ export default function App() {
               onCardClick={handleCardClick}
               />} 
             />
-            <Route path="/sign-in" element={!loggedIn ? <Login handleInfoTooltip={handleInfoTooltip} setLoggedIn={setLoggedIn} setLogin={setLogin} /> : <Navigate to="/" replace />} />
-            <Route path="/sign-up" element={!loggedIn ? <Register handleInfoTooltip={handleInfoTooltip} /> : <Navigate to="/" replace />} />
-            <Route path="*" element={loggedIn ? <Navigate to="/" replace /> : <Navigate to="/sign-in" replace />} />
+            <Route path="/signin" element={!loggedIn ? <Login handleInfoTooltip={handleInfoTooltip} setLoggedIn={setLoggedIn} setLogin={setLogin} /> : <Navigate to="/" replace />} />
+            <Route path="/signup" element={!loggedIn ? <Register handleInfoTooltip={handleInfoTooltip} /> : <Navigate to="/" replace />} />
+            <Route path="*" element={loggedIn ? <Navigate to="/" replace /> : <Navigate to="/signin" replace />} />
           </Routes>
        
           <Footer />

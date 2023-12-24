@@ -1,8 +1,10 @@
 const router = require("express").Router();
 
 const allowedCors = [
-  "http://localhost:3001",
-  "http://localhost:3000",
+  "https://gosu.nomoredomainsmonster.ru",
+  "https://api.gosu.nomoredomainsmonster.ru",
+  "http://gosu.nomoredomainsmonster.ru",
+  "https://api.gosu.nomoredomainsmonster.ru"
 ];
 
 router.use((req, res, next) => {
