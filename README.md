@@ -1,4 +1,4 @@
-#Проект Mesto фронтенд + бэкенд
+# Проект Mesto фронтенд + бэкенд
 
 IP  158.160.76.196
 Frontend  https://gosu.nomoredomainsmonster.ru
