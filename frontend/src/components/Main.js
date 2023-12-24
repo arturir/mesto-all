@@ -1,21 +1,10 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import Card from './Card';
 import addButton from '../images/add.svg';
-import { CurrentUserContext } from './../contexts/CurrentUserContext';
-import api from '../utils/Api'
+import { CurrentUserContext } from './../contexts/CurrentUserContext'
 export default function Main ({handleEditAvatarClick, handleEditProfileClick, handleAddPlaceClick, onCardClick}) {
 
-    const { currentUser, handleCardLike, handleCardDelete, cards, tokenCheck, setCurrentUser, handleResponseError, setCards, jwt } = useContext(CurrentUserContext);
-      useEffect(() => {
-        api.getUserInfo()
-        .then((data) => {setCurrentUser(data)})
-        .catch((error) => {handleResponseError(error)});
-      }, []);
-      useEffect(()=> {
-        api.getCards()
-        .then(data => {setCards(data);})
-        .catch((error) => {handleResponseError(error)});
-      }, []);
+    const { currentUser, handleCardLike, handleCardDelete, cards } = useContext(CurrentUserContext);
 
     return (
         <main className="main">
@@ -37,10 +26,9 @@ export default function Main ({handleEditAvatarClick, handleEditProfileClick, ha
             </section>
             <section className="cards">
                 {cards.map((card)=> (
-                    <Card card={card} onCardClick={onCardClick} onCardLike={handleCardLike} onDeleteClick={handleCardDelete} key={card._id||card.card._id} />
+                    <Card card={card} onCardClick={onCardClick} onCardLike={handleCardLike} onDeleteClick={handleCardDelete} key={card._id} />
                 ))}
             </section>
         </main>
     )
-    
 }

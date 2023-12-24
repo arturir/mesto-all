@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const User = require("./user");
 const regExpUrl = require("../regexp/url");
 
 const cardSchema = new mongoose.Schema({

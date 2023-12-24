@@ -1,15 +1,5 @@
-# Проект Mesto фронтенд + бэкенд
-Репозиторий - https://github.com/arturir/express-mesto-gha
-
-## Директории
-
-`/routes` — папка с файлами роутера  
-`/controllers` — папка с файлами контроллеров пользователя и карточки   
-`/models` — папка с файлами описания схем пользователя и карточки  
-  
-Остальные директории вспомогательные, создаются при необходимости разработчиком
-
-## Запуск проекта
-
-`npm run start` — запускает сервер   
-`npm run dev` — запускает сервер с hot-reload
+#Проект Mesto фронтенд + бэкенд
+IP  158.160.76.196
+Frontend  https://gosu.nomoredomainsmonster.ru
+Backend  https://api.gosu.nomoredomainsmonster.ru
+Репозиторий - https://github.com/arturir/mesto-all

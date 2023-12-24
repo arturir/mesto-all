@@ -29,7 +29,6 @@ export default function App() {
         [login, setLogin] = useState(''),
         [textInfoTooltip, setTextInfoTooltip] = useState(''),
         [typeInfoTooltip, setTypeInfoTooltip] = useState(''),
-        [jwt, setJwt] = useState(''),
         navigate = useNavigate(); 
 
   useEffect(() => {
@@ -48,22 +47,22 @@ export default function App() {
     }
   }, [isSomePopupOpen]);
   useEffect(() => {
+    if (loggedIn) {
+      api.getUserInfo()
+      .then((data) => {setCurrentUser(data)})
+      .catch((error) => {handleResponseError(error)});
+    }
+  }, [loggedIn]);
+  useEffect(()=> {
+    if (loggedIn) {
+      api.getCards()
+      .then(data => {setCards(data)})
+      .catch((error) => {handleResponseError(error)});
+    }
+  }, [loggedIn]);
+  useEffect(() => {
     tokenCheck();
-  }, []);
-  // useEffect(() => {
-  //   tokenCheck();
-  // }, []);
-  // useEffect(() => {
-  //   api.getUserInfo()
-  //   .then((data) => {setCurrentUser(data)})
-  //   .catch((error) => {handleResponseError(error)});
-  // }, []);
-  // useEffect(()=> {
-  //   api.getCards()
-  //   .then(data => {setCards(data);})
-  //   .catch((error) => {handleResponseError(error)});
-  // }, []);
-  
+  }, [])     
 
   function handleResponseError (error) {
     console.error("Ошибка данных, подробнее > ", error);
@@ -136,15 +135,13 @@ export default function App() {
     localStorage.removeItem('jwt');
   }
   function tokenCheck () {
-    const token = localStorage.getItem('jwt');
-    console.log(token);
-    if (token){
-      checkToken(token).then(res => {
+    const jwt = localStorage.getItem('jwt');
+    if (jwt){
+      checkToken(jwt).then(res => {
         if (res) {
           setLoggedIn(true);
           setLogin(res.email)
           navigate("/", {replace: true})
-          setJwt(token);
         }
       })
       .catch(err=> console.log(err, ' Неправильный токен или он отсутствует'));
@@ -158,8 +155,8 @@ export default function App() {
     }
   }
 
-  return (  
-    <CurrentUserContext.Provider value={{currentUser, handleCardLike, handleCardDelete, cards, handleResponseError, errorRegLogHandle, loggedIn, tokenCheck, setCurrentUser, handleResponseError, setCards, jwt}}>
+  return (
+    <CurrentUserContext.Provider value={{currentUser, handleCardLike, handleCardDelete, cards, handleResponseError, errorRegLogHandle, loggedIn}}>
       <div className="page">
           <Header exitAccount={exitAccount} login={login} />
           <Routes>

@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const { requestLogger, errorLogger } = require("./middlewares/logger");
 
 require("dotenv").config();
 

@@ -28,6 +28,12 @@ router.use(handlerCORS);
 router.use("/users", auth, require("./users"));
 router.use("/cards", auth, require("./cards"));
 
+router.get("/crash-test", () => {
+  setTimeout(() => {
+    throw new Error("Сервер сейчас упадёт");
+  }, 0);
+});
+
 router.post("/signin", validationBodyCreateCard, login);
 router.post("/signup", validationBodyCreateCard, createUser);
 
