@@ -3,13 +3,12 @@ const Card = require("../models/card");
 const BadRequestError = require("../errors/BadRequestError");
 const ForbiddenError = require("../errors/ForbiddenError");
 const NotFoundError = require("../errors/NotFoundError");
-const InternalServerError = require("../errors/InternalServerError");
 
 module.exports.getCards = (req, res, next) => {
   Card.find({})
     .populate("owner")
     .then((cards) => res.send(cards))
-    .catch(() => { next(new InternalServerError("Произошла ошибка")); });
+    .catch(() => { next(("Произошла ошибка")); });
 };
 module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
@@ -20,7 +19,7 @@ module.exports.createCard = (req, res, next) => {
       if (err.name === "ValidationError") {
         next(new BadRequestError("Переданы некорректные данные при создании карточки."));
       } else {
-        next(new InternalServerError("Произошла ошибка"));
+        next(("Произошла ошибка"));
       }
   });
 };

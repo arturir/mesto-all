@@ -7,15 +7,13 @@ const secretKey = NODE_ENV === "production" ? JWT_SECRET : "dev-secret";
 
 const User = require("../models/user");
 const BadRequestError = require("../errors/BadRequestError");
-const UnauthorizedError = require("../errors/UnauthorizedError");
 const NotFoundError = require("../errors/NotFoundError");
-const InternalServerError = require("../errors/InternalServerError");
 const ConflictError = require("../errors/ConflictError");
 
 module.exports.getUsers = (req, res, next) => {
   User.find({})
     .then((users) => res.send({ users }))
-    .catch(() => { next(new InternalServerError("Произошла ошибка")); });
+    .catch(() => { next(("Произошла ошибка")); });
 };
 module.exports.getUserById = (req, res, next) => {
   User.findById(req.params.userId)
@@ -61,7 +59,7 @@ module.exports.createUser = (req, res, next) => {
         if (err.code === 11000) {
           next(new ConflictError("Такой пользователь уже существует."));
         }
-        next(new InternalServerError("Произошла ошибка"));
+        next(("Произошла ошибка"));
       }
     });
   });
@@ -110,6 +108,6 @@ module.exports.login = (req, res, next) => {
       res.send({ token });
     })
     .catch((err) => {
-      next(new UnauthorizedError(err.message));
+      next(err);
     });
 };
