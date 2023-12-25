@@ -4,7 +4,8 @@ const allowedCors = [
   "https://gosu.nomoredomainsmonster.ru",
   "https://api.gosu.nomoredomainsmonster.ru",
   "http://gosu.nomoredomainsmonster.ru",
-  "https://api.gosu.nomoredomainsmonster.ru"
+  "https://api.gosu.nomoredomainsmonster.ru",
+  "http://localhost:3000"
 ];
 
 router.use((req, res, next) => {
